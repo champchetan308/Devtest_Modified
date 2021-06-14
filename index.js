@@ -120,7 +120,7 @@ app.post('/result',urlencodedParser,(req,res) =>{
   var concurrentRequests = req.body.concurrent;
   console.log(totalRequests, concurrentRequests)
   //first part to be executed+
-  cp.execSync("ab -n "+totalRequests+" -c " +concurrentRequests+ " http://localhost:"+lp+"/  >  "+global3+".txt", (error, stdout, stderr) =>
+  cp.execSync("ab -n "+totalRequests+" -c " +concurrentRequests+ " http://54.159.117.219/:"+lp+"/  >  "+global3+".txt", (error, stdout, stderr) =>
   {
     if (error) {
       console.log(`error: ${error.message}`);
